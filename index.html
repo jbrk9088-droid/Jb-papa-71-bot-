@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      jb papa 71-X MINI BOT | Premium MultiDevice
+    </title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&amp;display=swap" rel="stylesheet" />
+    <style>
+      :root {
+            --primary: #ff1493; /* Deep Pink */
+            --secondary: #ff69b4; /* Hot Pink */
+            --accent: #00ffff; /* Cyan for glow */
+            --dark: #0a0a0a;
+            --light: #ffffff;
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: &#39;Outfit&#39;, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #fce4ec;
+            color: #333;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* --- Animated Background Blobs --- */
+        .bg-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+            animation: moveBlob 12s infinite alternate;
+        }
+        .blob-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: var(--primary); }
+        .blob-2 { bottom: -10%; right: -10%; width: 600px; height: 600px; background: #8a2be2; animation-delay: -5s; }
+        .blob-3 { top: 40%; left: 30%; width: 400px; height: 400px; background: var(--accent); opacity: 0.4; animation-duration: 15s; }
+
+        @keyframes moveBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(40px, 40px) scale(1.1); }
+        }
+
+        /* --- Navbar --- */
+        nav {
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.6);
+            border-bottom: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .server-status {
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 8px 20px;
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .online-dot {
+            height: 10px;
+            width: 10px;
+            background-color: #00FF00;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00FF00;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse { 0% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); } 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); } }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 5% 50px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #111, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        /* --- PREMIUM GLASS CONSOLE --- */
+        .glass-console-wrapper {
+            width: 100%;
+            max-width: 900px;
+            min-height: 550px; 
+            margin: 40px auto;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .glass-console {
+            width: 100%;
+            height: 100%;
+            min-height: 550px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-top: 1px solid rgba(255,255,255,0.8);
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            padding: 40px;
+        }
+
+        .glass-console:hover {
+            transform: translateY(-5px) scale(1.005);
+            box-shadow: 0 25px 60px rgba(255, 20, 147, 0.25);
+        }
+
+        .console-header {
+            position: absolute;
+            top: 25px;
+            left: 35px;
+            display: flex;
+            gap: 8px;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; transition: transform 0.3s; }
+        .dot:hover { transform: scale(1.2); }
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #27c93f; }
+
+        .console-content {
+            z-index: 2;
+            text-align: center;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .terminal-text {
+            font-family: &#39;Courier New&#39;, monospace;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: rgba(255,255,255,0.5);
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: 1px solid white;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-main {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.4);
+        }
+
+        .btn-main::after {
+            content: &#39;&#39;;
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.6s;
+        }
+        .btn-main:hover::after { left: 100%; }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255, 20, 147, 0.6); }
+        
+        .btn-alt {
+            background: rgba(255,255,255,0.7);
+            color: var(--primary);
+            border: 2px solid white;
+            backdrop-filter: blur(5px);
+        }
+        .btn-alt:hover { background: white; transform: translateY(-3px); color: #111; }
+
+        /* --- Features Grid --- */
+        section { padding: 80px 10%; position: relative; z-index: 2; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.5);
+            backdrop-filter: blur(12px);
+            padding: 40px 30px;
+            border-radius: 24px;
+            border: 1px solid white;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .card:hover { transform: translateY(-15px); background: rgba(255,255,255,0.9); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        
+        .icon-box {
+            width: 70px; height: 70px;
+            background: linear-gradient(135deg, white, #fce4ec);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .card i { font-size: 2rem; color: var(--primary); }
+        .card h3 { margin-bottom: 10px; font-size: 1.5rem; }
+        .card p { opacity: 0.7; line-height: 1.6; }
+
+        /* --- REVIEW SECTION --- */
+        .review-section {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(15px);
+            margin: 0 5% 50px;
+            border-radius: 40px;
+            padding: 60px 5%;
+            border: 1px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .review-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        .review-form {
+            background: rgba(255,255,255,0.9);
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+
+        .review-form h3 { color: var(--primary); margin-bottom: 20px; font-size: 1.3rem; }
+        
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; font-size: 0.9rem; }
+        .input-group input, .input-group textarea, .input-group select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+            background: #f9f9f9;
+        }
+        .input-group input:focus, .input-group textarea:focus { border-color: var(--primary); background: white; }
+
+        .reviews-display {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+        
+        /* Custom Scrollbar */
+        .reviews-display::-webkit-scrollbar { width: 6px; }
+        .reviews-display::-webkit-scrollbar-track { background: transparent; }
+        .reviews-display::-webkit-scrollbar-thumb { background: rgba(255, 20, 147, 0.3); border-radius: 10px; }
+        .reviews-display::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+        .review-card {
+            background: rgba(255,255,255,0.7);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            animation: slideUp 0.5s ease forwards;
+            transition: transform 0.3s;
+        }
+        .review-card:hover { background: white; transform: scale(1.02); }
+
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .r-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .r-name { font-weight: 800; font-size: 1.1rem; color: #222; }
+        .r-stars { color: #ffb703; font-size: 0.9rem; letter-spacing: 2px; }
+        .r-text { color: #555; font-size: 0.95rem; line-height: 1.6; }
+        .r-date { font-size: 0.75rem; color: #999; margin-top: 15px; text-align: right; font-weight: 600; text-transform: uppercase; }
+
+        /* --- Footer --- */
+        footer {
+            background: #000;
+            color: white;
+            padding: 60px 10%;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            align-items: center; justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+        .social-links a:hover { background: var(--primary); transform: translateY(-5px); }
+
+        @media (max-width: 900px) {
+            .glass-console-wrapper { height: auto; min-height: auto; padding: 0; }
+            .glass-console { min-height: 450px; padding: 30px 20px; }
+            .review-container { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Background Blobs -->
+    <div class="bg-blob blob-1">
+    </div>
+    <div class="bg-blob blob-2">
+    </div>
+    <div class="bg-blob blob-3">
+    </div>
+    <nav>
+      <div class="logo">
+        <i class="fas fa-robot"></i>
+        JB PAPA 71-X MINI
+      </div>
+      <div class="server-status">
+        <span class="online-dot"></span>
+        <span>        System Online
+</span>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="hero">
+      <p style="letter-spacing: 4px; color: var(--primary); font-weight: 700; margin-bottom: 15px; font-size: 0.9rem;">
+        JB PAPA71 . PRODUCTION
+      </p>
+      <h1>
+        MULTIDEVICE
+        <br />
+        WHATSAPP BOT
+      </h1>
+      <!-- PREMIUM GLASS BOX -->
+      <div class="glass-console-wrapper">
+        <div class="glass-console">
+          <div class="console-header">
+            <div class="dot red">
+            </div>
+            <div class="dot yellow">
+            </div>
+            <div class="dot green">
+            </div>
+          </div>
+          <div class="console-content">
+            <div class="terminal-text">
+              <i class="fas fa-terminal"></i>
+              <span>              root@Jb papa-71:~$ initializing...
+</span>
+              <span style="animation: blink 1s infinite">              _
+</span>
+            </div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px; font-weight: 800;">
+              JB PAPA 71-X PAIR CENTER
+            </h2>
+            <p style="margin-bottom: 40px; opacity: 0.8; font-size: 1.1rem; max-width: 600px;">
+              The ultimate WhatsApp automation tool. Secure Multi-Device Support. Connect once, run forever.
+            </p>
+            <div class="btn-group">
+              <!-- UPDATED LINK 1: CONNECT BOT -->
+              <a href="https://bot-jb-papa-71.vercel.app/" class="btn btn-main">              <i class="fas fa-link"></i>
+              CONNECT BOT
+</a>
+              <!-- UPDATED LINK 2: TELEGRAM SUPPORT -->
+              <a href="https://t.me/jb_papa71+JB PAPA 71" target="_blank" class="btn btn-alt">              <i class="fab fa-telegram"></i>
+              GET SUPPORT
+</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Features -->
+    <section>
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-size: 2.8rem; margin-bottom: 10px;">
+          Why Choose JB PAPA 71-X?
+        </h2>
+        <p style="color: #666;">
+          Experience the next generation of automation
+        </p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="icon-box">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>
+            Multi-Device
+          </h3>
+          <p>
+            Keep the bot running on up to 4 devices simultaneously without internet connection on your primary phone.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon-box">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>
+            Anti-Ban Security
+          </h3>
+          <p>
+            Advanced encryption algorithms prevent WhatsApp bans while using the bot for heavy tasks.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon-box">
+            <i class="fas fa-wand-magic-sparkles"></i>
+          </div>
+          <h3>
+            AI Powered
+          </h3>
+          <p>
+            Generate images, write code, and chat intelligently using the latest AI models integrated within.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- REVIEW SECTION -->
+    <section class="review-section" id="reviews">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <p style="color: var(--primary); font-weight: 700; letter-spacing: 2px; margin-bottom: 10px;">
+          COMMUNITY FEEDBACK
+        </p>
+        <h2 style="font-size: 2.5rem;">
+          User Reviews
+        </h2>
+      </div>
+      <div class="review-container">
+        <!-- Form Side -->
+        <div class="review-form">
+          <h3>
+            <i class="fas fa-pen-nib"></i>
+            Write a Review
+          </h3>
+          <form id="reviewForm">
+            <div class="input-group">
+              <label>
+                Name
+              </label>
+              <input type="text" id="userName" placeholder="Enter your name" required="" />
+            </div>
+            <div class="input-group">
+              <label>
+                Rating
+              </label>
+              <select id="userRating">
+                <option value="5">
+                  ⭐⭐⭐⭐⭐ (Excellent)
+                </option>
+                <option value="4">
+                  ⭐⭐⭐⭐ (Good)
+                </option>
+                <option value="3">
+                  ⭐⭐⭐ (Average)
+                </option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>
+                Review
+              </label>
+              <textarea id="userMsg" rows="3" placeholder="Share your experience..." required="">
+              </textarea>
+            </div>
+            <button type="submit" class="btn btn-main" style="width: 100%; justify-content: center;">
+              Post Review
+            </button>
+          </form>
+        </div>
+        <!-- Display Side -->
+        <div class="reviews-display" id="reviewsList">
+          <div class="review-card">
+            <div class="r-header">
+              <span class="r-name">              black devil Gaming
+</span>
+              <span class="r-stars">              ⭐⭐⭐⭐⭐
+</span>
+            </div>
+            <p class="r-text">
+              Multi-device feature works perfectly! I turned off my phone net and bot was still active. Best script ever.
+            </p>
+            <div class="r-date">
+              2 hours ago
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="r-header">
+              <span class="r-name">              Anindita K.
+</span>
+              <span class="r-stars">              ⭐⭐⭐⭐⭐
+</span>
+            </div>
+            <p class="r-text">
+              I love the AI image generator. It&#39;s so easy to use and the quality is amazing. Highly recommended for group admins.
+            </p>
+            <div class="r-date">
+              1 day ago
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <div class="logo" style="margin-bottom: 25px; justify-content: center;">
+        <i class="fas fa-robot"></i>
+        JB PAPA 71-X MINI
+      </div>
+      <div class="social-links" style="margin-bottom: 30px;">
+        <a href="#">        <i class="fab fa-whatsapp"></i>
+</a>
+        <a href="#">        <i class="fab fa-instagram"></i>
+</a>
+        <a href="https://github.com/th3bunny">        <i class="fab fa-github"></i>
+</a>
+      </div>
+      <p style="opacity: 0.5; font-size: 0.9rem;">
+        © 2026 JB PAPA 71. Production. All Rights Reserved.
+      </p>
+    </footer>
+    <!-- Javascript for Reviews -->
+    <script>
+      document.getElementById(&#39;reviewForm&#39;).addEventListener(&#39;submit&#39;, function(e) {
+            e.preventDefault();
+            
+            // Get values
+            const name = document.getElementById(&#39;userName&#39;).value;
+            const ratingVal = document.getElementById(&#39;userRating&#39;).value;
+            const msg = document.getElementById(&#39;userMsg&#39;).value;
+
+            // Create stars string
+            let stars = &#39;&#39;;
+            for(let i=0; i&lt;ratingVal; i++) stars += &#39;⭐&#39;;
+
+            // Get Current Time formatted
+            const timeString = &#34;Just Now&#34;;
+
+            // Create HTML structure
+            const reviewHTML = `
+                &lt;div class=&#34;review-card&#34;&gt;
+                    &lt;div class=&#34;r-header&#34;&gt;
+                        &lt;span class=&#34;r-name&#34;&gt;${name}&lt;/span&gt;
+                        &lt;span class=&#34;r-stars&#34;&gt;${stars}&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;p class=&#34;r-text&#34;&gt;${msg}&lt;/p&gt;
+                    &lt;div class=&#34;r-date&#34;&gt;${timeString}&lt;/div&gt;
+                &lt;/div&gt;
+            `;
+
+            // Inject into list
+            const list = document.getElementById(&#39;reviewsList&#39;);
+            list.insertAdjacentHTML(&#39;afterbegin&#39;, reviewHTML);
+
+            // Reset Form
+            document.getElementById(&#39;reviewForm&#39;).reset();
+            
+            // Optional: Scroll to top of review list
+            list.scrollTop = 0;
+            
+            alert(&#39;Thanks for your review!&#39;);
+        });
+    </script>
+  </body>
+</html>
